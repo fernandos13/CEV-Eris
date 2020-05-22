@@ -394,6 +394,7 @@
 	result = "ryetalyn"
 	required_reagents = list("arithrazine" = 1, "carbon" = 1)
 	result_amount = 2
+
 /datum/chemical_reaction/negative_ling
 	result = "negativeling"
 	required_reagents = list("ryetalyn" = 1, "carbon" = 1)
@@ -1877,6 +1878,11 @@
 /datum/chemical_reaction/sanguinum
 	result = "sanguinum"
 	required_reagents = list("bicaridine" = 1, "spaceacillin" = 1, "mercury" = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/mindwipe
+	result = "mindwipe"
+	required_reagents = list("fuhrerole" = 1, "mindbreaker" = 1, "haloperidol" = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/kyphotorin

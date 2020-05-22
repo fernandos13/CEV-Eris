@@ -203,6 +203,12 @@
 	preloaded_reagents = list("prosurgeon" = 10)
 
 
+/obj/item/weapon/reagent_containers/pill/mindwipe
+	name = "Mindwipe pill"
+	desc = "Consume when you need to stabilize your mind in combat situations, and remove neurotic breakdowns. DON'T mix with anything else."
+	icon_state = "pill18"
+	preloaded_reagents = list("mindwipe" = 35)
+
 
 
 //Pills with random content

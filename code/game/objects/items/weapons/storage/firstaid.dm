@@ -118,6 +118,7 @@
 	new /obj/item/weapon/storage/pill_bottle/dylovene(src)
 	new /obj/item/weapon/storage/pill_bottle/tramadol(src)
 	new /obj/item/weapon/storage/pill_bottle/spaceacillin(src)
+	new /obj/item/weapon/storage/pill_bottle/mindwipe(src)
 	new /obj/item/stack/medical/splint(src)
 
 /obj/item/weapon/storage/firstaid/surgery
@@ -327,6 +328,19 @@
 	new /obj/item/weapon/reagent_containers/pill/prosurgeon(src)
 	new /obj/item/weapon/reagent_containers/pill/prosurgeon(src)
 	new /obj/item/weapon/reagent_containers/pill/prosurgeon(src)
+
+/obj/item/weapon/storage/pill_bottle/mindwipe
+	name = "bottle of Mindwipe pills"
+	desc = "Consume when you need to stabilize your mind in combat situations, and remove neurotic breakdowns. DON'T mix with anything else."
+
+/obj/item/weapon/storage/pill_bottle/mindwipe/populate_contents()
+	new /obj/item/weapon/reagent_containers/pill/mindwipe(src)
+	new /obj/item/weapon/reagent_containers/pill/mindwipe(src)
+	new /obj/item/weapon/reagent_containers/pill/mindwipe(src)
+	new /obj/item/weapon/reagent_containers/pill/mindwipe(src)
+	new /obj/item/weapon/reagent_containers/pill/mindwipe(src)
+	new /obj/item/weapon/reagent_containers/pill/mindwipe(src)
+	new /obj/item/weapon/reagent_containers/pill/mindwipe(src)
 
 /*
  * Portable Freezers

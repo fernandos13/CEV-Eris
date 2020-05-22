@@ -220,3 +220,39 @@
 	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "sanguinum_w")
 	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "sanguinum_w")
 	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "sanguinum_w")
+
+/datum/reagent/drug/mindwipe
+	name = "Mindwipe"
+	id = "mindwipe"
+	description = "Shocks the user's brain hard enough to make him forget about his quirks. Is ill-advised because of side effects. Requires at least 5 units to be metabolized to take effect, and it's not instant."
+	taste_description = "bitter"
+	reagent_state = LIQUID
+	color = "#bfff00"
+	metabolism = REM * 1.5
+	overdose = REAGENTS_OVERDOSE * 2.5
+	nerve_system_accumulations = 95
+	addiction_chance = 20
+
+/datum/reagent/drug/mindwipe/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if (ishuman(M))
+		var/mob/living/carbon/human/affected = M
+		affected.sanity.insight = 0
+		affected.sanity.level = 35
+
+		testing("Dose: [dose]")
+		//To avoid spamming this drug to remove breakdowns in microdoses, you need to wait until it's metabolized in appropriate dose.
+		if(dose >= 5)
+			for (var/datum/breakdown/B in affected.sanity.breakdowns)
+				//We don't want to spam the chat
+				if(B)
+					B.Destroy()
+					to_chat(M, SPAN_NOTICE("You feel that something eases the strain on your sanity. But at what cost?"))
+
+/datum/reagent/drug/mindwipe/withdrawal_act(mob/living/carbon/M)
+	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_BASIC, STIM_TIME, "mindwipe_w")
+
+/datum/reagent/drug/mindwipe/overdose(var/mob/living/carbon/M, var/alien)
+	M.add_side_effect("Headache", 11)
+	if(prob(5))
+		M.vomit()
+	M.adjustToxLoss(0.5)
