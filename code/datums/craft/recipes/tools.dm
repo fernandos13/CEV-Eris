@@ -209,7 +209,7 @@
 
 /datum/craft_recipe/tool/smvessel
 	name = "reinforced Plasteel vessel"
-	result = /obj/item/smvessel
+	result = /obj/item/smvessel/empty
 
 	steps = list(
 		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL),

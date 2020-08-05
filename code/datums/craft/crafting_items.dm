@@ -10,7 +10,7 @@
 	origin_tech = list(TECH_ENGINEERING = 3, TECH_POWER = 4)
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_GOLD = 1)
 
-/obj/item/smvessel
+/obj/item/smvessel/empty
 	name = "reinforced Plasteel vessel"
 	desc = "a vessel to allow you to take a snippet of the Super Matter."
 	icon_state = "shard_1"
