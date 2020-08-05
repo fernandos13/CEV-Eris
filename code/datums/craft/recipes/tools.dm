@@ -206,3 +206,52 @@
 		list(QUALITY_WIRE_CUTTING, 10, 20),
 		list(/obj/item/stack/rods, 2, 30)
 	)
+
+/datum/craft_recipe/tool/smvessel
+	name = "reinforced Plasteel vessel"
+	result = /obj/item/smvessel
+
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL),
+		list(QUALITY_WELDING, 10, 20),
+		list(QUALITY_SCREW_DRIVING, 10, 20),
+	)
+
+/datum/craft_recipe/tool/plasteelcasing
+	name = "plasteel casing for SMDS cells"
+	result = /obj/item/plasteelcasing
+
+	steps = list(
+		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTEEL),
+		list(CRAFT_MATERIAL, 1, MATERIAL_SILVER),
+		list(QUALITY_WELDING, 10, 20),
+		list(/obj/item/stack/cable_coil, 5, 10),
+		list(QUALITY_WIRE_CUTTING, 10, 20),
+	)
+
+/datum/craft_recipe/tool/ssmds
+	name = "Small Super Matter Divine Spark"
+	result = /obj/item/weapon/cell/small/smds
+
+	steps = list(
+		list(/obj/item/plasteelcasing, 1, 1),
+		list(/obj/item/smvessel/filled, 1, 1),
+	)
+/datum/craft_recipe/tool/msmds
+	name = "Medium Super Matter Divine Spark"
+	result = /obj/item/weapon/cell/medium/smds
+
+	steps = list(
+		list(/obj/item/plasteelcasing, 1, 1),
+		list(/obj/item/smvessel/filled, 1, 1),
+	)
+/datum/craft_recipe/tool/lsmds
+	name = "Large Super Matter Divine Spark"
+	result = /obj/item/weapon/cell/large/smds
+
+	steps = list(
+		list(/obj/item/plasteelcasing, 1, 1),
+		list(/obj/item/smvessel/filled, 1, 1),
+		list(QUALITY_SCREW_DRIVING, 10, 1),
+	)
+

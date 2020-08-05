@@ -73,6 +73,15 @@
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 3)
 	maxcharge = 15000
 
+/obj/item/weapon/cell/large/smds
+	name = "L S.M.D.S."
+	desc = "Super Matter Divine Spark, SM contained in a precious vessel, sadly you can't recharge it. \A try it and it will loose all of its power."
+	icon_state = "smds_l"
+	origin_tech = list(TECH_POWER = 7)
+	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_SILVER = 3) // need work
+	maxcharge = 0 //can't recharge it
+	charge = 30000 //need tuning
+
 //Meme cells - for fun and cancer
 
 /obj/item/weapon/cell/large/potato
@@ -173,6 +182,15 @@
 	matter = list(MATERIAL_STEEL = 4, MATERIAL_PLASTIC = 2)
 	maxcharge = 1000
 
+/obj/item/weapon/cell/medium/smds
+	name = "M Super Matter Divine Spark"
+	desc = "Super Matter Divine Spark, SM contained in a precious vessel, sadly you can't recharge it, \A try it and it will loose all of its power."
+	icon_state = "smds_m"
+	origin_tech = list(TECH_POWER = 7)
+	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_SILVER = 3) // need work
+	maxcharge = 0 //can't recharge it
+	charge = 2000 //need tuning
+
 //SMALL CELLS - for small devices, such as flashlights, analyzers and HUDs.
 
 /obj/item/weapon/cell/small
@@ -264,3 +282,12 @@
 	origin_tech = list(TECH_POWER = 4)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 1)
 	maxcharge = 300
+
+/obj/item/weapon/cell/small/smds
+	name = "S S.M.D.S."
+	desc = "Super Matter Divine Spark, SM contained in a precious vessel, sadly you can't recharge it. \A try it and it will loose all of its power."
+	icon_state = "smds_s"
+	origin_tech = list(TECH_POWER = 7)
+	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_SILVER = 3) // need work
+	maxcharge = 0 //can't recharge it
+	charge = 1000 //need tuning
