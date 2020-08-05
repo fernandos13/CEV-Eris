@@ -55,6 +55,7 @@
 	var/emergency_point = 700
 	var/emergency_alert = "CRYSTAL DELAMINATION IMMINENT."
 	var/explosion_point = 1000
+	var/sparkcount = 100
 
 	light_color = "#8A8A00"
 	var/warning_color = "#B8B800"
@@ -351,7 +352,7 @@
 			R.receive_pulse(transfer_energy * (min(3/distance, 1))**2)
 
 
-/obj/machinery/power/supermatter/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
+/obj/machinery/power/supermatter/attackby(obj/item/W, mob/living/user as mob)
 
 	/*
 		Repairing the supermatter with duct tape, for meme value
@@ -366,18 +367,27 @@
 			damage = 0
 			return
 		//If you fail the above, your tape will be eaten by the code below
+	if (istype(W, /obj/item/smvessel))
+		user.visible_message("[user] starts to chip [src] with the [W]", "You starts to chip [src] with the [W]")
+		user.visible_message("You manage to capture a spark from [src] with the [W]")
+		user.apply_effect(100, IRRADIATE)
+		new /obj/item/smvessel/filled(src)
+		return
+		//If you fail the above, your tape will be eaten by the code below
 
-	user.visible_message(
-		"<span class=\"warning\">\The [user] touches \a [W] to \the [src] as a silence fills the room...</span>",\
-		"<span class=\"danger\">You touch \the [W] to \the [src] when everything suddenly goes silent.\"</span>\n<span class=\"notice\">\The [W] flashes into dust as you flinch away from \the [src].</span>",\
-		"<span class=\"warning\">Everything suddenly goes silent.</span>"
-	)
 
-	user.drop_from_inventory(W)
-	Consume(W)
 
-	user.apply_effect(150, IRRADIATE)
+	else
+		user.visible_message(
+			"<span class=\"warning\">\The [user] touches \a [W] to \the [src] as a silence fills the room...</span>",\
+			"<span class=\"danger\">You touch \the [W] to \the [src] when everything suddenly goes silent.\"</span>\n<span class=\"notice\">\The [W] flashes into dust as you flinch away from \the [src].</span>",\
+			"<span class=\"warning\">Everything suddenly goes silent.</span>"
+		)
+		if (!istype(W, /obj/item/smvessel))
+			user.drop_from_inventory(W)
+			Consume(W)
 
+		user.apply_effect(150, IRRADIATE)
 
 /obj/machinery/power/supermatter/Bumped(atom/AM as mob|obj)
 	if(istype(AM, /obj/effect))
@@ -389,8 +399,8 @@
 	else if(!grav_pulling) //To prevent spam, detonating supermatter does not indicate non-mobs being destroyed
 		AM.visible_message("<span class=\"warning\">\The [AM] smacks into \the [src] and rapidly flashes to ash.</span>",\
 		"<span class=\"warning\">You hear a loud crack as you are washed with a wave of heat.</span>")
-
-	Consume(AM)
+	if (!istype(AM, /obj/item/smvessel))
+		Consume(AM)
 
 
 /obj/machinery/power/supermatter/proc/Consume(var/mob/living/user)
