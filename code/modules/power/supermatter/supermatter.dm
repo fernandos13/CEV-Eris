@@ -401,7 +401,7 @@
 		AM.visible_message("<span class=\"warning\">\The [AM] smacks into \the [src] and rapidly flashes to ash.</span>",\
 		"<span class=\"warning\">You hear a loud crack as you are washed with a wave of heat.</span>")
 	if (!istype(AM, /obj/item/smvessel))
-		if(!W.has_quality(QUALITY_SEALING))
+		if(!AM.has_quality(QUALITY_SEALING))
 			Consume(AM)
 
 
