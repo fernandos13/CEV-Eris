@@ -371,7 +371,8 @@
 		user.visible_message("[user] starts to chip [src] with the [W]", "You starts to chip [src] with the [W]")
 		user.visible_message("You manage to capture a spark from [src] with the [W]")
 		user.apply_effect(100, IRRADIATE)
-		new /obj/item/smvessel/filled(src)
+		new /obj/item/smvessel/filled(W)
+		qdel(W)
 		return
 		//If you fail the above, your tape will be eaten by the code below
 
