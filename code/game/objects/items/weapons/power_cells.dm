@@ -79,8 +79,9 @@
 	icon_state = "smds_l"
 	origin_tech = list(TECH_POWER = 7)
 	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_SILVER = 3) // need work
-	maxcharge = 0 //can't recharge it
 	charge = 30000 //need tuning
+	maxcharge = 0 //can't recharge it
+	
 
 //Meme cells - for fun and cancer
 
@@ -188,8 +189,8 @@
 	icon_state = "smds_m"
 	origin_tech = list(TECH_POWER = 7)
 	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_SILVER = 3) // need work
+	charge = 1000 //need tuning
 	maxcharge = 0 //can't recharge it
-	charge = 2000 //need tuning
 
 //SMALL CELLS - for small devices, such as flashlights, analyzers and HUDs.
 
@@ -289,5 +290,6 @@
 	icon_state = "smds_s"
 	origin_tech = list(TECH_POWER = 7)
 	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_SILVER = 3) // need work
-	maxcharge = 0 //can't recharge it
-	charge = 1000 //need tuning
+	maxcharge = 1000 //need tuning
+	maxcharge = 0 //need tuning
+	charge = 1000 //can't recharge it
