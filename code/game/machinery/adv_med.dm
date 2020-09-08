@@ -30,6 +30,9 @@
 		return
 	src.go_out()
 	add_fingerprint(usr)
+	while(src.occupant)
+		src.go_out()
+		add_fingerprint(usr)
 	return
 
 /obj/machinery/bodyscanner/verb/move_inside()
