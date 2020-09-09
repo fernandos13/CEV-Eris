@@ -206,3 +206,11 @@
 		list(QUALITY_BOLT_TURNING, 10, 60)
 	)
 	related_stats = list(STAT_COG)
+
+/datum/craft_recipe/gun_parts
+	name = "gun parts"
+	result = /obj/item/gun_parts
+	steps = list(
+		list(CRAFT_MATERIAL, 15, MATERIAL_PLASTEEL, "time" = 40),
+	)
+	related_stats = list(STAT_MEC)
