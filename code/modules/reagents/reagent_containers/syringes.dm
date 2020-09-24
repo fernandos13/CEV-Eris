@@ -150,7 +150,6 @@
 				
 				//Injecting through a hardsuit takes longer due to needing to find a port.
 				// Handling errors and injection duration
-				if (user.stats.getStat(STAT_BIO) > 80) injtime = 0
 				var/mob/living/carbon/human/H = target
 				if(istype(H))
 					var/obj/item/clothing/suit/space/SS = H.get_equipped_item(slot_wear_suit)
