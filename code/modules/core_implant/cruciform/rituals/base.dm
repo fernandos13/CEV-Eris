@@ -18,7 +18,7 @@
 	name = "Relief"
 	phrase = "Et si ambulavero in medio umbrae mortis non timebo mala"
 	desc = "Short litany to relieve pain of the afflicted."
-	power = 50
+	power = 20
 
 /datum/ritual/cruciform/base/relief/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	H.add_chemical_effect(CE_PAINKILLER, 10)
@@ -41,7 +41,8 @@
 	name = "Entreaty"
 	phrase = "Deus meus ut quid dereliquisti me"
 	desc = "Call for help, that other cruciform bearers can hear."
-	power = 50
+	cooldown = TRUE
+	cooldown_time = 60 SECONDS
 
 /datum/ritual/cruciform/base/entreaty/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	for(var/mob/living/carbon/human/target in disciples)
@@ -98,6 +99,8 @@
 	phrase = "Et si medio umbrae"
 	desc = "Very short litany to identify NeoTheology followers. Targets individuals directly in front of caster or being grabbed by caster."
 	power = 20
+	cooldown = TRUE
+	cooldown_time = 60 SECONDS
 
 /datum/ritual/cruciform/base/sense_cruciform/perform(mob/living/carbon/human/H, obj/item/weapon/implant/core_implant/C)
 	var/mob/living/carbon/human/T = get_victim(H)
